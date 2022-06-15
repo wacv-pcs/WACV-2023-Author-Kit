@@ -1,9 +1,9 @@
-% ---------------------------------------------------------------
+% --------A-------------------------------------------------------
 %
 % $Id: wacv.sty,v 1.3 2005/10/24 19:56:15 awf Exp $
 %
 % by Paolo.Ienne@di.epfl.ch
-% some mods by awf@acm.org
+% some modsby awf@acm.org
 % Updated for WACV 2023 04/2022, David Crandall, djcran@indiana.edu
 %
 % ---------------------------------------------------------------
@@ -72,14 +72,6 @@
 \wacvfinalfalse
 \def\wacvfinalcopy{\global\wacvfinaltrue}
 
-\newif\ifwacvalgorithms
-\wacvalgorithmsfalse
-\def\wacvalgorithmstrack{\global\wacvalgorithmstrue}
-
-\newif\ifwacvapplications
-\wacvapplicationsfalse
-\def\wacvapplicationstrack{\global\wacvapplicationstrue}
-
 % memento from size10.clo
 % \normalsize{\@setfontsize\normalsize\@xpt\@xiipt}
 % \small{\@setfontsize\small\@ixpt{11}}
@@ -96,30 +88,26 @@
    {
    \newpage
    \null
-   \vskip .375in
+   %\vskip .375in
    \begin{center}
-      {\Large \bf \@title \par}
+      {\large \bf \@title \par}  
       % additional two empty lines at the end of the title
-      \vspace*{24pt}
+   %   \vspace*{24pt}
       {
-      \large
-      \lineskip .5em
-      \begin{tabular}[t]{c}
-        \ifwacvfinal\@author\else  \ifwacvalgorithms Anonymous WACV 2023 {\color[rgb]{.9,.1,0.1} \fbox{Algorithms Track}} submission \else \ifwacvapplications { Anonymous WACV 2023 {\color[rgb]{.3,0.6,.3}\fbox{APPLICATIONS TRACK}} submission } \else {\Huge :-(} \\[24pt]
-                                   {\textbf{ERROR:}} YOU HAVE NOT YET SET THE APPLICATIONS OR ALGORITHMS TRACK \\
-        OPTION AT THE TOP OF YOUR LATEX FILE. \\
-        YOU MUST DO THIS BEFORE SUBMITTING THE PAPER!!! \errmessage{You haven't yet set the applications or algorithms track option at the top of your Latex file} \\
-        \fi \fi
-        \\
-         \vspace*{1pt}\\%This space will need to be here in the final copy, so don't squeeze it out for the review copy.
-Paper ID \wacvPaperID \fi
-      \end{tabular}
-      \par
+  %    \large
+ %     \lineskip .5em
+ %     \begin{tabular}[t]{c}
+  %       \ifwacvfinal\@author\else Anonymous WACV submission\\
+  %       \vspace*{1pt}\\%This space will need to be here in the final copy, so don't squeeze it out for the review copy.
+%Paper ID \wacvPaperID 
+%\fi
+ %     \end{tabular}
+ %     \par
       }
       % additional small space at the end of the author name
-      \vskip .5em
+ %     \vskip .5em
       % additional empty line at the end of the title block
-      \vspace*{12pt}
+ %     \vspace*{12pt}
    \end{center}
    }
 
@@ -213,8 +201,7 @@ Paper ID \wacvPaperID \fi
   %}
 \wacvruleroffset=\textheight
 \advance\wacvruleroffset by -3.7pt
-\ifwacvalgorithms\color[rgb]{.9,.1,0.1}\else\color[rgb]{.3,0.6,.3}\fi
-%  \color[rgb]{.5,.5,1}
+  \color[rgb]{.5,.5,1}
   \AtTextUpperLeft{%
     \put(\LenToUnit{-35pt},\LenToUnit{-\wacvruleroffset}){%left ruler
       \wacvruler{\wacvrulercount}}
@@ -228,8 +215,7 @@ Paper ID \wacvPaperID \fi
   }
   \AtTextUpperLeft{%confidential
     \put(0,\LenToUnit{1cm}){\parbox{\textwidth}{\centering\wacvtenhv
-        WACV 2023 Submission \#\wacvPaperID. \ifwacvalgorithms \fbox{Algorithms Track.} \else \ifwacvapplications \fbox{APPLICATIONS TRACK.} \else \\
-        YOU HAVE NOT SET ALGORITHMS/APPLICATIONS FLAG AT TOP OF YOUR LATEX FILE! YOU MUST DO THIS BEFORE SUBMITTING! \fi \fi CONFIDENTIAL REVIEW COPY.  DO NOT DISTRIBUTE. }}
+       WACV 2023 Submission \#\wacvPaperID. CONFIDENTIAL REVIEW COPY.  DO NOT DISTRIBUTE.}}
   }
 \fi
 }

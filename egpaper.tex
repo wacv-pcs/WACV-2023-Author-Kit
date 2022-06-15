@@ -6,32 +6,35 @@
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{amssymb}
-
+\usepackage{booktabs}
 % Include other packages here, before hyperref.
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-%%% IMPORTANT - These next three lines are crucial.
+%%% IMPORTANT - These next three lines are CRUCIAL.
 %               (1) PLEASE enter your paper ID (given by CMT) replacing the
 %                   '****' right below here with the ID from CMT.
-%               (2) Leave the \wacvfinacopy commented out for the submission
+%               (2) If you are submitting to the Algorithms track, then uncomment
+%                   the \wacvalgorithmstrack line below. If you are submitting to the
+%                   Applications track, then uncomment the \wacvapplicationstrack line.
+%                   If you do not update this properly, we cannot guarantee
+%                   that your paper will be evaluated according to the correct
+%                   review criteria!
+%               (3) Leave the \wacvfinalcopy commented out for the submission
 %                   version, but UNCOMMENT it for your CAMERA-READY upload.
-%               (3) For the camera-ready version, you may be asked to set a
-%                   starting page number.  If so, replace the '9876' below with
-%                   the starting page number assigned by the publication chair.
  
 %(1)
 \def\wacvPaperID{****} % Enter the WACV Paper ID here
 
 %(2)
-%\wacvfinalcopy % *** Uncomment this line for the final submission
+%\wacvalgorithmstrack   % Uncomment this line if you are submitting to the Algorithms Track.
+%\wacvapplicationstrack % Uncomment this line if you are submitting to the Applications Track.
 
 %(3)
-\ifwacvfinal
-\def\assignedStartPage{9876} % *** Enter the assigned starting page number (instead of 9876)
-\fi
+%\wacvfinalcopy % *** Uncomment this line for the final submission
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -48,11 +51,7 @@
 \fi
 
 % Pages are numbered in submission mode, and unnumbered in camera-ready
-\ifwacvfinal
-\setcounter{page}{\assignedStartPage}
-\else
 \pagestyle{empty}
-\fi
 
 \def\httilde{\mbox{\tt\raisebox{-.5ex}{\symbol{126}}}}
 
@@ -78,7 +77,7 @@ First line of institution2 address\\
 }
 
 \maketitle
-%\thispagestyle{empty}
+\thispagestyle{empty}
 
 %%%%%%%%% ABSTRACT
 \begin{abstract}
@@ -112,11 +111,10 @@ Please refer to the author guidelines on the WACV 2023 web page
 for a discussion of the policy on dual submissions.
 
 \subsection{Paper length}
-Papers, excluding the references section,
-must be no longer than eight pages in length. The references section
-will not be included in the page count, and there is no limit on the
-length of the references section. For example, a paper of eight pages
-with two pages of references would have a total length of 10 pages.
+Papers must be no longer than eight pages, not including references.
+Any pages in excess of eight pages must contain ONLY references ---
+no text, figures, acknowledgements, tables, etc.
+
 {\bf There will be no extra page charges for WACV 2023.}
 
 Overlength papers will simply not be reviewed.  This includes papers
@@ -167,10 +165,13 @@ review a paper unless the previous citations are known and
 available.
 
 Blind review means that you do not use the words ``my'' or ``our''
-when citing previous work.  That is all.  (But see below for
-techreports.)
+when citing previous work.  In addition, in means you are extremely careful if you
+share URLs to source code, github repositories, project websites,
+datasets, etc. The URL or other information (e.g. your github user ID)
+may identify you and would violate the anonymization policy.
 
-Saying ``this builds on the work of Lucy Smith [1]'' does not say
+
+For example, saying ``this builds on the work of Lucy Smith [1]'' does not say
 that you are Lucy Smith; it says that you are building on her
 work.  If you are Smith and Jones, do not say ``as we show in
 [7]'', say ``as Smith and Jones show in [7]'' and at the end of the
@@ -299,8 +300,7 @@ sentence-ending space. So \eg is correct, {\em e.g.} is not.  The provided
 When citing a multi-author paper, you may save space by using ``et alia'',
 shortened to ``\etal'' (not ``{\em et.\ al.}'' as ``{\em et}'' is a complete word.)
 However, use it only when there are three or more authors.  Thus, the
-following is correct: ``
-   Frobnication has been trendy lately.
+following is correct: ``Frobnication has been trendy lately.
    It was introduced by Alpher~\cite{Alpher02}, and subsequently developed by
    Alpher and Fotheringham-Smythe~\cite{Alpher03}, and Alpher \etal~\cite{Alpher04}.''
 
@@ -418,18 +418,21 @@ example~\cite{Authors20}.  Where appropriate, include the name(s) of
 editors of referenced books.
 
 \begin{table}
-\begin{center}
-\begin{tabular}{|l|c|}
-\hline
-Method & Frobnability \\
-\hline\hline
-Theirs & Frumpy \\
-Yours & Frobbly \\
-Ours & Makes one's heart Frob\\
-\hline
+  \begin{center}
+    {\small{
+\begin{tabular}{llr}
+\toprule
+Method & Frobnability & Accuracy \\
+\midrule
+Theirs & Frumpy & 30.2\%\\
+Yours & Frobbly & 45.2\%\\
+Ours & Makes one's heart Frob & 99.9\%\\
+\bottomrule
 \end{tabular}
+}}
 \end{center}
-\caption{Results.   Ours is better.}
+\caption{Results.   Ours are better. If you prefer, you can put table
+captions on top of the tables instead of on the bottom.}
 \end{table}
 
 %-------------------------------------------------------------------------
