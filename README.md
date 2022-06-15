@@ -1,7 +1,7 @@
 # WACV 2023 Author Kit (Latex)
 
 ## Overleaf Template
-We highly recommend the use of the [Overleaf Template](https://www.overleaf.com/latex/templates/wacv-2023-author-kit-template/cpnsmqvrczmz).  Overleaf has all of the needed packages/fonts by default and moreover, allows for synchronous collaboration/editing of multiple authors.  It is very user-friendly, but also fully functional.  The overleaf version is identical to the version found in this github repository (they are synced).
+We highly recommend the use of the [Overleaf Template](https://www.overleaf.com/latex/templates/wacv-2023-author-kit-template/sthdnkfzqvtf).  Overleaf has all of the needed packages/fonts by default and moreover, allows for synchronous collaboration/editing of multiple authors.  It is very user-friendly, but also fully functional.  The overleaf version is identical to the version found in this github repository (they are synced).
 
 ### Other Latex Build Tools
 If you prefer to use an alternative editor/build engine to overleaf, you can either:
