@@ -218,7 +218,7 @@ Paper ID \wacvPaperID \fi
   \AtTextUpperLeft{%
     \put(\LenToUnit{-35pt},\LenToUnit{-\wacvruleroffset}){%left ruler
       \wacvruler{\wacvrulercount}}
-    \put(\LenToUnit{\textwidth\kern 30pt},\LenToUnit{-\wacvruleroffset}){%right ruler
+    \put(\LenToUnit{\dimexpr \textwidth+30pt},\LenToUnit{-\wacvruleroffset}){%right ruler
       \wacvruler{\wacvrulercount}}
   }
 \def\pid{\parbox{1in}{\begin{center}\bf\sf{\small WACV}\\\#\wacvPaperID\end{center}}}
